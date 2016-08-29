@@ -43,3 +43,9 @@ Conda.add_channel("foo")
 Conda.rm_channel("foo")
 channels = Conda.channels()
 @test (isempty(channels) || channels == ["defaults"])
+
+
+if is_windows()
+    Conda.add("qt")
+    Conda.rm("qt")
+end
